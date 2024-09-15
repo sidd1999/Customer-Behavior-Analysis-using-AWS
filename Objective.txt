@@ -1,0 +1,3 @@
+To build a real-time analytics platform that tracks and analyzes customer behavior on an e-commerce website. The platform will help the business understand user engagement, optimize marketing strategies, and enhance the overall customer experience by providing insights into how customers interact with the website.
+
+E-commerce businesses often struggle to understand customer behavior in real time, which can lead to missed opportunities in optimizing user experience, targeting promotions, and reducing cart abandonment rates. This project aims to provide real-time insights into customer actions, such as page views, clicks, and cart activities, allowing the business to make data-driven decisions instantly.
