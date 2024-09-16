@@ -1,0 +1,4 @@
+Add the code in lambda function and deploy.
+
+Create a trigger for S3.
+Then upload data again in S3 so that the function triggers
