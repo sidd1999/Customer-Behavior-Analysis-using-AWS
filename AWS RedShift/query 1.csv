@@ -1,0 +1,11 @@
+timestamp,user_id,session_id,page_url,action_type,product_id
+2024-09-15 00:40:14.479262,user_31,session_30,/product,click,prod_4
+2024-09-15 00:40:14.479322,user_69,session_170,/product,view,prod_4
+2024-09-15 00:40:14.479336,user_8,session_442,/product,purchase,prod_3
+2024-09-15 00:40:14.479361,user_63,session_681,/home,purchase,prod_4
+2024-09-15 00:40:14.479374,user_47,session_248,/cart,purchase,prod_3
+2024-09-15 00:40:14.479386,user_9,session_463,/checkout,view,prod_4
+2024-09-15 00:40:14.479397,user_60,session_550,/cart,click,prod_3
+2024-09-15 00:40:14.479407,user_19,session_10,/checkout,add_to_cart,prod_2
+2024-09-15 00:40:14.479417,user_87,session_694,/product,add_to_cart,prod_2
+2024-09-15 00:40:14.479427,user_66,session_504,/cart,add_to_cart,prod_1

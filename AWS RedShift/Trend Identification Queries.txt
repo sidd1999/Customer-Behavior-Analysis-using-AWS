@@ -1,0 +1,88 @@
+1. User Activity Trends
+You can track the number of user actions over time to see when your platform is most active
+
+SELECT 
+    DATE_TRUNC('hour', timestamp) AS hour,  -- You can change 'hour' to 'day', 'week', etc.
+    COUNT(*) AS actions
+FROM 
+    clickstream_data
+GROUP BY 
+    hour
+ORDER BY 
+    hour;
+
+-----------------------------------------
+2. Product Popularity Trends
+Analyze how views or purchases of specific products change over time.
+
+SELECT 
+    DATE_TRUNC('day', timestamp) AS day, 
+    product_id, 
+    COUNT(*) AS views
+FROM 
+    clickstream_data
+WHERE 
+    action_type = 'view'
+GROUP BY 
+    day, product_id
+ORDER BY 
+    day, views DESC;
+
+-----------------------------------------
+3. Conversion Rate Trends
+Track how conversion rates (the percentage of users who view a product and then purchase it) change over time.
+
+WITH views AS (
+    SELECT 
+        DATE_TRUNC('day', timestamp) AS day,
+        product_id,
+        COUNT(*) AS view_count
+    FROM 
+        clickstream_data
+    WHERE 
+        action_type = 'view'
+    GROUP BY 
+        day, product_id
+),
+purchases AS (
+    SELECT 
+        DATE_TRUNC('day', timestamp) AS day,
+        product_id,
+        COUNT(*) AS purchase_count
+    FROM 
+        clickstream_data
+    WHERE 
+        action_type = 'purchase'
+    GROUP BY 
+        day, product_id
+)
+SELECT 
+    v.day,
+    v.product_id,
+    v.view_count,
+    p.purchase_count,
+    (p.purchase_count * 100.0 / NULLIF(v.view_count, 0)) AS conversion_rate
+FROM 
+    views v
+LEFT JOIN 
+    purchases p
+ON 
+    v.day = p.day AND v.product_id = p.product_id
+ORDER BY 
+    v.day, v.product_id;
+
+
+4. Sales Trends
+Track how sales figures change over time.
+
+SELECT 
+    DATE_TRUNC('day', timestamp) AS day, 
+    SUM(sales) AS total_sales
+FROM 
+    clickstream_data
+WHERE 
+    action_type = 'purchase'
+GROUP BY 
+    day
+ORDER BY 
+    day;

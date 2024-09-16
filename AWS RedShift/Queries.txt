@@ -1,0 +1,54 @@
+1) SELECT * FROM clickstream_data LIMIT 10;
+
+2) SELECT COUNT(*) FROM clickstream_data;
+
+3) Analyze User Activity Over Time
+SELECT 
+    DATE_TRUNC('hour', timestamp) AS hour,
+    COUNT(*) AS actions
+FROM 
+    clickstream_data
+GROUP BY 
+    hour
+ORDER BY 
+    hour;
+
+4) Identify the Most Viewed Products
+SELECT 
+    product_id, 
+    COUNT(*) AS views
+FROM 
+    clickstream_data
+WHERE 
+    action_type = 'view'
+GROUP BY 
+    product_id
+ORDER BY 
+    views DESC
+LIMIT 10;
+
+5) Calculate Conversion Rates for Products
+SELECT 
+    product_id,
+    COUNT(CASE WHEN action_type = 'purchase' THEN 1 END) AS purchases,
+    COUNT(CASE WHEN action_type = 'view' THEN 1 END) AS views,
+    (COUNT(CASE WHEN action_type = 'purchase' THEN 1 END) * 100.0 / NULLIF(COUNT(CASE WHEN action_type = 'view' THEN 1 END), 0)) AS conversion_rate
+FROM 
+    clickstream_data
+GROUP BY 
+    product_id
+ORDER BY 
+    conversion_rate DESC;
+
+
+6) Analyze User Journeys
+SELECT 
+    user_id, 
+    session_id, 
+    LISTAGG(page_url, ' -> ') WITHIN GROUP (ORDER BY timestamp) AS journey
+FROM 
+    clickstream_data
+GROUP BY 
+    user_id, session_id
+ORDER BY 
+    user_id, session_id;
