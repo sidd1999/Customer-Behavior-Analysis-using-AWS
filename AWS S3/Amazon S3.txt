@@ -1,0 +1,14 @@
+Amazon S3 is used to store the raw and processed data.
+
+Steps used to load data:
+Click on Create bucket.
+Provide a unique name for your bucket.
+Select the region where you want the bucket to be located.
+Leave most of the default settings, but you can enable versioning or encryption based on your requirements.
+
+Once the bucket is created, click on the bucket name to open it.
+Click "Upload," then "Add files."
+Select the file to upload.
+Click "Upload" to store the file in the S3 bucket.
+
+The screenshot of the data is present as Amazon S3.png
