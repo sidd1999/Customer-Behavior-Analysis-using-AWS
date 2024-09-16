@@ -1,0 +1,22 @@
+1) Redshift Cluster Setup:
+Created an Amazon Redshift cluster with appropriate configurations for data analysis.
+Ensured the cluster had an IAM role with AmazonS3ReadOnlyAccess to allow data import from S3.
+
+2)Table Creation:
+Defined a table in Redshift (clickstream_data) to match the structure of the JSON data you generated. The table included columns for timestamp, user_id, session_id, page_url, action_type, and product_id.
+
+3)Data Import:
+Used the COPY command to load the JSON data from an S3 bucket into the Redshift table.
+Verified that the data was imported correctly by running a basic SELECT query.
+
+4)Data Analysis with SQL Queries:
+Ran various SQL queries to analyze the data:
+Total Actions Count: Determined the total number of user actions recorded in the dataset.
+Hourly Activity Analysis: Aggregated user actions by hour to observe trends in user engagement over time.
+Product View Analysis: Identified the most viewed products to understand product popularity.
+Conversion Rate Calculation: Calculated conversion rates for products by comparing views to purchases.
+User Journey Analysis: Analyzed user navigation paths on the website to understand common journeys.
+
+5)Deriving Business Insights:
+Based on the query results, derived insights related to user behavior, product performance, and conversion rates.
+Provided recommendations for optimizing product marketing, user experience, and overall platform performance.
