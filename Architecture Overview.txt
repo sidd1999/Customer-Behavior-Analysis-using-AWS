@@ -1,0 +1,24 @@
+Architecture Overview:
+
+Data Source: 
+The python code designed to generate synthetic clickstream data, which simulates user interactions on an e-commerce website. The data is not generated from actual websites; rather, it uses randomly generated values to mimic typical user actions on a fictional website. 
+
+Here's a breakdown of what the script does:
+Timestamp: The current time when the data is generated.
+User ID: A randomly generated identifier for the user (e.g., user_23).
+Session ID: A randomly generated identifier for the user's session (e.g., session_456).
+Page URL: Randomly selected from a list of predefined URLs that represent different pages on an e-commerce site (e.g., /home, /product, /cart).
+Action Type: Randomly selected from a list of predefined actions a user might take (e.g., view, click, add_to_cart, purchase).
+Product ID: Randomly selected from a list of product identifiers to simulate interactions with different products (e.g., prod_1, prod_2).
+
+Amazon Kinesis: Capture and stream the clickstream data.
+
+AWS Lambda: Process the streaming data in real-time to identify patterns, such as frequent product views or high abandonment rates.
+
+AWS Glue: Perform ETL operations on the processed data to prepare it for deep analysis.
+
+Amazon Redshift: Store the transformed data for historical analysis, reporting, and trend identification.
+
+Amazon S3: Store raw clickstream data, error logs, and ETL job outputs for backup and auditing.
+
+IAM Roles: Secure the data pipeline with appropriate access control
