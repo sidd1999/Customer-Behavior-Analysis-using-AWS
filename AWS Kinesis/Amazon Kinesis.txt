@@ -1,0 +1,7 @@
+Capture and stream the real-time clickstream data.
+
+Steps:
+-Click on "Create data stream" to start the process.
+-A shard is a unit of capacity in Kinesis. Each shard can handle up to 1MB of incoming data per second and 2MB of outgoing data per second.
+-After configuring the settings, click on "Create data stream."
+-Once the stream is active, it will be listed on your Kinesis dashboard.
