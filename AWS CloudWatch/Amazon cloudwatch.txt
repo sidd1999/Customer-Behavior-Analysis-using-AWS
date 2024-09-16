@@ -1,0 +1,14 @@
+Step 1:
+In the AWS Management Console, use the search bar at the top to search for CloudWatch.
+Click on Amazon CloudWatch from the search results.
+
+Step 2: Monitor Metrics
+View Metrics:
+In the CloudWatch console, navigate to Metrics in the left-hand menu.
+Here, you can see various AWS services and custom metrics that CloudWatch is tracking.
+Select a Metric Namespace:
+Metrics are organized by namespaces, which correspond to AWS services or custom-defined metrics.
+For example, if you want to monitor an EC2 instance, select the AWS/EC2 namespace.
+Choose Specific Metrics:
+Select specific metrics you want to monitor, such as CPUUtilization or NetworkIn.
+You can visualize these metrics using graphs within the CloudWatch console.
