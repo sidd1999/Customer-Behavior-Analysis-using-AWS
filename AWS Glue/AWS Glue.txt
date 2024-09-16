@@ -1,0 +1,41 @@
+AWS Glue is a fully managed extract, transform, and load (ETL) service provided by Amazon Web Services. It helps prepare and transform your data for analytics.
+
+Step 1: Access AWS Glue Console
+
+Step 2: Set Up the Data Catalog 
+Before performing ETL, ensure your processed data is cataloged in the AWS Glue Data Catalog. 
+If you haven’t set up a Glue Crawler to catalog the data, follow these steps:
+Create a Crawler:
+Go to the Crawlers section in AWS Glue.
+Click Add crawler and follow the prompts to create a crawler that points to your processed/ folder in S3 
+Run the Crawler:
+Run the crawler to catalog the data, creating tables in the Glue Data Catalog.
+Once your data is cataloged, you can proceed with the ETL process.
+
+Step 3: Create an AWS Glue Job for ETL
+An AWS Glue Job is where you define the ETL logic to transform your data. 
+Go to the Jobs Section:
+In the AWS Glue console, click on Jobs in the left-hand menu.
+Click Create job to start creating a new ETL job. Select script spark
+Set Transformations:
+In the Glue job script editor, you can define transformations on your data.
+Data Cleansing: 
+Data Aggregation: 
+Data Format Conversion: 
+Save your script and the job configuration.
+Run the Job:
+After saving, you can run the job manually by selecting the job from the Jobs list and clicking Run job.
+Monitor the job’s progress in the Glue console. You can check the logs to see detailed execution information.
+
+Step 4: Validate and Analyze the Transformed Data
+Check the Output:
+After the job completes, navigate to the S3 location or database where the transformed data was written.
+Verify that the data is correctly transformed and stored as expected.
+
+
+If your data processing needs to run on a regular basis, you can schedule the Glue job to run automatically.
+In the Glue job configuration, set up a schedule using a cron expression or select a predefined interval (e.g., daily, hourly).
+Monitor Job Execution:
+Use AWS CloudWatch or Glue’s built-in monitoring tools to track job performance and troubleshoot any issues.
+
+
